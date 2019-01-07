@@ -35,9 +35,8 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                     Toast.makeText(ItinerarySearchActivity.this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
-                    TripModel tripModel = new TripModel(departure, destination, date);
-
-                    intent.putExtra(EXTRA_TRIP, tripModel);
+                    TripModel searchModel = new TripModel(departure, destination, date);
+                    intent.putExtra(EXTRA_TRIP, searchModel);
                     startActivity(intent);
                 }
             }

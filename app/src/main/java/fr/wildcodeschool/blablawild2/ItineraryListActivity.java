@@ -3,6 +3,7 @@ package fr.wildcodeschool.blablawild2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,8 +16,9 @@ public class ItineraryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itinerary_list);
 
-        TripModel tripModel = getIntent().getParcelableExtra(ItinerarySearchActivity.EXTRA_TRIP);
-        this.setTitle(String.format(getString(R.string.departure_to_destination), tripModel.getDeparture(), tripModel.getDestination()));
+        TripModel searchModel = getIntent().getParcelableExtra(ItinerarySearchActivity.EXTRA_TRIP);
+        this.setTitle(String.format(getString(R.string.departure_to_destination), searchModel.getDeparture(), searchModel.getDestination()));
+        Toast.makeText(ItineraryListActivity.this,searchModel.getDate(),Toast.LENGTH_LONG).show();
 
         ListView listTrip = findViewById(R.id.list_trip);
         ArrayList<TripModel> tripList = new ArrayList<>();
