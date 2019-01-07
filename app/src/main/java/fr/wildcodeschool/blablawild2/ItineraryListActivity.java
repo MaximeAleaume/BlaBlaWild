@@ -16,7 +16,7 @@ public class ItineraryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itinerary_list);
 
-        TripModel searchModel = getIntent().getParcelableExtra(ItinerarySearchActivity.EXTRA_TRIP);
+        SearchModel searchModel = getIntent().getParcelableExtra(ItinerarySearchActivity.EXTRA_TRIP);
         this.setTitle(String.format(getString(R.string.departure_to_destination), searchModel.getDeparture(), searchModel.getDestination()));
         Toast.makeText(ItineraryListActivity.this,searchModel.getDate(),Toast.LENGTH_LONG).show();
 
