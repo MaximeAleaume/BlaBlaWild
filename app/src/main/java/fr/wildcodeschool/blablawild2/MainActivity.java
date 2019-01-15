@@ -43,22 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        // Write a message to the database
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("message");
 
-        //myRef.setValue("Hello, World!");
-
-        // new Date() crée un objet contenant la date et l'heure du jour
-//        ItineraryModel itineraryModel = new ItineraryModel("Toulouse", "Paris", "Eric Cartman", new Date(), 15);
-//        DatabaseReference itineraryRef = database.getReference("itinerary");
-//        itineraryRef.setValue(itineraryModel);
 
         // accès à la base de données Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-// sélection de la référence "message"
+        // sélection de la référence "message"
         DatabaseReference itineraryRef = database.getReference("itinerary");
-// lecture des données à la référence "itinerary" une seule fois
+        // lecture des données à la référence "itinerary" une seule fois
         itineraryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

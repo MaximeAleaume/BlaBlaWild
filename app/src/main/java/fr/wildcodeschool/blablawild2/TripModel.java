@@ -43,6 +43,8 @@ public class TripModel implements Parcelable {
         }
     };
 
+
+
     protected TripModel(Parcel in) {
         departure = in.readString();
         destination = in.readString();
